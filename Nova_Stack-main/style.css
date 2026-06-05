@@ -1,0 +1,297 @@
+body {
+    font-family: Arial, sans-serif;
+     background: linear-gradient(120deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.751) 35%, rgba(0, 0, 0, 0.553) 100%);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+:root {
+  --clr-bg: #0f172a;   /* dark navy */
+  --clr-text: #ffffff; /* white */
+  --clr-accent: #60a5fa; /* sky-400 */
+  --space-1: 1rem;
+  --space-2: 1.5rem;
+  --radius: .375rem;
+}
+
+/* ===== Navbar wrapper ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ background: linear-gradient(120deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.751) 35%, rgba(0, 0, 0, 0.553) 100%);
+  
+  color: var(--clr-text);
+  padding: var(--space-1) var(--space-2);
+  /* Optional: sticky top */
+  /* position: sticky; top: 0; z-index: 10; */
+}
+
+/* ----- Brand ----- */
+.navbar__brand {
+  font-size: 1.5rem;       /* ≈ text-2xl */
+  font-weight: 800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;        /* ≈ font-extrabold */
+  text-decoration: none;
+  color: inherit;          /* keep white */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ----- Toggle button (hamburger) ----- */
+.navbar__toggle {
+  display: none;           /* hidden on ≥768 px */
+  background: none;
+  border: none;
+  font-size: 1.5rem;       /* ≈ text-2xl */
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ----- Menu (ul) ----- */
+.navbar__menu {
+  list-style: none;
+ 
+  margin: 0;
+  padding: 0;
+  display: flex;           /* flex row on desktop */
+  gap: var(--space-2);
+}
+
+/* ----- Links ----- */
+.navbar__link {
+  font-size: 1.125rem; 
+  font-family: 'Inter', Arial, sans-serif;    
+  font-weight: 700;       
+  color: inherit;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+.navbar__link:hover { color: var(--clr-accent); }
+
+/* ======= Responsive (mobile < 768 px) ======= */
+@media (max-width: 767.98px) {
+  .navbar__toggle { display: block; }
+
+  /* start hidden; JS toggles .is-open */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--space-1);
+    gap: var(--space-1);
+    background: var(--clr-bg);
+    border-radius: var(--radius);
+  }
+  .navbar__menu.is-open { display: flex; }
+
+  /* Wider click targets */
+  .navbar__link { padding: .5rem 0; }
+}
+
+.contact {
+    text-align: center;
+    
+    padding: 4rem 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-family:  Helvetica, sans-serif;
+}
+
+.contact-btn {
+    margin-top: 1.5rem;
+    background-color: white;
+    color: #2563EB;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.contact-info {
+    margin-top: 1.5rem;
+    background-color: #2D2D2D;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+ background-image: url(contact.jpg);
+    padding: 3rem 1rem;
+}
+
+.form-container {
+    background-color: #2D2D2D;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-title {
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-desc {
+    text-align: center;
+    font-size: 1rem;
+    color: #D1D5DB;
+    margin-bottom: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #2563EB;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1E4DB7;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #3A3A3A;
+    padding: 2.5rem 1.5rem;
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: #D1D5DB;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #40A9FF;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #D1D5DB;
+}
+
+.footer-links-inline {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links-inline a {
+    text-decoration: none;
+    color: #D1D5DB;
+    transition: color 0.3s ease;
+}
+
+.footer-links-inline a:hover {
+    color: #40A9FF;
+}
+
+.language-selector {
+    background: transparent;
+    color: white;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+}
+
+.language-selector option {
+    color: black;
+}
+

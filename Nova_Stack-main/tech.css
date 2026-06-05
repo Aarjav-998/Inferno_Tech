@@ -1,0 +1,83 @@
+:root {
+  --clr-bg: #0f172a;   /* dark navy */
+  --clr-text: #ffffff; /* white */
+  --clr-accent: #60a5fa; /* sky-400 */
+  --space-1: 1rem;
+  --space-2: 1.5rem;
+  --radius: .375rem;
+}
+
+/* ===== Navbar wrapper ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ background: linear-gradient(120deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.751) 35%, rgba(0, 0, 0, 0.553) 100%);
+  
+  color: var(--clr-text);
+  padding: var(--space-1) var(--space-2);
+  /* Optional: sticky top */
+  /* position: sticky; top: 0; z-index: 10; */
+}
+
+/* ----- Brand ----- */
+.navbar__brand {
+  font-size: 1.5rem;       /* ≈ text-2xl */
+  font-weight: 800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;        /* ≈ font-extrabold */
+  text-decoration: none;
+  color: inherit;          /* keep white */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ----- Toggle button (hamburger) ----- */
+.navbar__toggle {
+  display: none;           /* hidden on ≥768 px */
+  background: none;
+  border: none;
+  font-size: 1.5rem;       /* ≈ text-2xl */
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ----- Menu (ul) ----- */
+.navbar__menu {
+  list-style: none;
+ 
+  margin: 0;
+  padding: 0;
+  display: flex;           /* flex row on desktop */
+  gap: var(--space-2);
+}
+
+/* ----- Links ----- */
+.navbar__link {
+  font-size: 1.125rem; 
+  font-family: 'Inter', Arial, sans-serif;    
+  font-weight: 700;       
+  color: inherit;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+.navbar__link:hover { color: var(--clr-accent); }
+
+/* ======= Responsive (mobile < 768 px) ======= */
+@media (max-width: 767.98px) {
+  .navbar__toggle { display: block; }
+
+  /* start hidden; JS toggles .is-open */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--space-1);
+    gap: var(--space-1);
+    background: var(--clr-bg);
+    border-radius: var(--radius);
+  }
+  .navbar__menu.is-open { display: flex; }
+
+  /* Wider click targets */
+  .navbar__link { padding: .5rem 0; }
+}

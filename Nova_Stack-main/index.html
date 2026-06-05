@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Stack AI POWERED WEB DESIGN</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=320">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-[#0a0a1f] via-[#141432] to-[#0a0a1f] flex flex-col overflow-x-hidden overflow-y-auto pb-24 font-[Montserrat]">
+
+    <!--  Navbar -->
+    
+
+  
+
+<nav class="fixed w-full z-10 bg-[#0a0a1f]/80 backdrop-blur-sm flex justify-between items-center px-6 py-4">
+    <div class="text-white text-3xl font-bold tracking-tight" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <span class="bg-gradient-to-r from-[#c15e1d] to-[#fcd8ba] bg-clip-text text-transparent" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">INFERNO TECH</span>
+
+    </div>
+    <button class="navbar__toggle" id="menu-btn" aria-label="Open navigation">☰</button>
+    <ul class="navbar__menu hidden flex-col md:flex md:flex-row md:space-x-8 text-white" id="menu">
+      <li><a href="index.html" class="navbar__link">Home</a></li>
+      <li><a href="contact.html" class="navbar__link">Contact</a></li>
+      <li><a href="w.html" class="navbar__link">Waitlist</a></li>
+      <li><a href="tech.html" class="navbar__link">Tech News</a></li>
+      
+    </ul>
+  </nav>
+
+
+    
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+
+  
+
+
+<!--  Hero Section with Background Image -->
+<section id="home" class="hero"style="background-image: url('hero-image.jpg');">
+    <div class="box">
+
+                <h1 class="title bg-gradient-to-r from-[#c15e1d] to-[#fcd8ba] bg-clip-text text-transparent text-bold">INFERNO TECH <br>Crafting Digital Masterpieces</h1>
+        <p class="par1" style="margin-top: 1rem; font-size: 1.25rem;line-height: 1.75rem; color: #D1D5DB; font-family: Arial, Helvetica, sans-serif; ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum et itaque necessitatibus, repellendus sint sunt.
+        </p>
+        
+
+        <a href="#contact" class="const">
+            Get Started 🚀
+        </a>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+    <!--  Services Section -->
+ <section id="packages" class="packages">
+        <h2 class="title">Our Exquisite Services</h2>
+        <div class="package-container">
+
+            <!-- Basic Package -->
+            <div class="package">
+                <h3 class="package-title">🌱 Basic <br>Package</h3>
+                <p class="package-desc">Perfect for: Personal portfolios, freelancers, and small businesses starting online.</p>
+                <button onclick="toggleDetails('basic')" class="learn-more">Learn More</button>
+                <div id="basic" class="hidden">
+                    <ul>
+                        <li>✅ Sleek, modern one-page design with smooth scrolling</li>
+                        <li>✅ Fully responsive on mobile, tablet, and desktop</li>
+                        <li>✅ Fast-loading & optimized for speed and performance</li>
+                        <li>✅ Integrated contact form for customer inquiries</li>
+                        <li>✅ Social media links to connect with your audience</li>
+                        <li>✅ Basic SEO setup to help your site appear on Google</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Standard Package -->
+            <div class="package">
+                <h3 class="package-title">🚀 Standard <br> Package</h3>
+                <p class="package-desc">Perfect for: Small to medium businesses, agencies, and startups needing multiple pages.</p>
+                <button onclick="toggleDetails('standard')" class="learn-more">Learn More</button>
+                <div id="standard" class="hidden">
+                    <ul>
+                        <li>✅ Up to 5 custom-designed pages.</li>
+                        <li>✅ SEO-optimized content to rank higher on search engines</li>
+                        <li>✅ Mobile-first design ensuring a seamless user experience</li>
+                        <li>✅ Interactive elements (buttons, hover effects, animations)</li>
+                        <li>✅ Custom contact & inquiry forms for lead generation</li>
+                        <li>✅ Google Maps integration to show business location</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="package">
+                <h3 class="package-title">💼 Premium <br> Package</h3>
+                <p class="package-desc">Perfect for: Businesses selling products or services online, including retail stores.</p>
+                <button onclick="toggleDetails('premium')" class="learn-more">Learn More</button>
+                <div id="premium" class="hidden">
+                    <ul>
+                        <li>✅ Full e-commerce setup (cart, checkout, products)</li>
+                        <li>✅ Secure payment gateway </li>
+                        <li>✅ AI-powered chatbots for customer support</li>
+                        <li>✅ SEO & marketing tools (Google Analytics, Facebook Pixel)</li>
+                        <li>✅ Dynamic product search & filtering</li>
+                        <li>✅ Automated email notifications</li>
+                        <li>✅ User account management & order tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="package">
+                <h3 class="package-title">🏢 Enterprise Package</h3>
+                <p class="package-desc">Perfect for: Large businesses and organizations requiring high-performance web solutions.</p>
+                <button onclick="toggleDetails('enterprise')" class="learn-more">Learn More</button>
+                <div id="enterprise" class="hidden">
+                    <ul>
+                        <li>✅ Unlimited custom pages</li>
+                        <li>✅ High-speed, scalable hosting</li>
+                        <li>✅ Advanced security (SSL, firewalls, multi-layer protection)</li>
+                        <li>✅ AI-powered automation (CRM, chatbots, lead generation)</li>
+                        <li>✅ Multi-user access & admin dashboards</li>
+                        <li>✅ Third-party API integrations (Payment, CRM, Analytics)</li>
+                        <li>✅ Custom-tailored web applications</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <br>
+    <br>
+    <br>
+     <section id="portfolio" class="portfolio">
+        <h2 class="title">Our Masterpieces</h2>
+        <div class="portfolio-container">
+
+            <div class="portfolio-item">
+                <h3 class="portfolio-title">📊 Business Website</h3>
+                <p class="portfolio-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis mollitia porro earum libero.</p>
+                <a href="#" class="view-live">View Live</a>
+            </div>
+
+            <div class="portfolio-item">
+                <h3 class="portfolio-title">🚀 Startup Landing Page</h3>
+                <p class="portfolio-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias aliquam magni dolorem facilis.</p>
+                <a href="#" class="view-live">View Live</a>
+            </div>
+
+        </div>
+    </section>
+
+<br><br><br>
+    <!--  Portfolio Section -->
+   
+<script>
+        function toggleDetails(id) {
+            document.getElementById(id).classList.toggle("hidden");
+        }
+    </script>
+   <!--  Footer -->
+    <footer class="bg-[#0a0a1f] text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Left Section - Logo & Description -->
+        <div>
+            <div class="text-white text-3xl font-bold tracking-tight mb-4" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                <span class="bg-gradient-to-r from-[#c15e1d] to-[#fcd8ba] bg-clip-text text-transparent" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">INFERNO TECH</span>
+            </div>
+            <p class="text-gray-400 text-sm">
+                At Inferno Tech, we craft AI-driven, high-performance websites that blend innovation,
+                speed, and stunning design to help businesses grow and succeed online.
+            </p>
+        </div>
+
+        <!-- Middle Section - Our Services -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><p class="hover:text-white">AI-Powered Web Design</p></li>
+                <li><p class="hover:text-white">Responsive UX/UI</p></li>
+                <li><p class="hover:text-white">SEO & Performance Optimization</p></li>
+                <li><p class="hover:text-white">Lightning-Fast Web Hosting</p></li>
+            </ul>
+        </div>
+
+        <!-- Right Section - Resources -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="https://web.dev/case-studies" target="_blank" class="hover:text-white">Case Studies</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank" class="hover:text-white">Web Development Tips</a></li>
+                <li><a href="https://web.dev/performance" target="_blank" class="hover:text-white">Performance Insights</a></li>
+            </ul>
+        </div>
+
+        <!-- Follow Us Section -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="#" class="hover:text-white">Twitter</a></li>
+                <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                <li><a href="https://github.com/Aarjav-998" class="hover:text-white">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-10 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center px-4 max-w-7xl mx-auto">
+        <div class="flex space-x-4 text-gray-400 text-sm mb-4 md:mb-0">
+            <p class="hover:text-white">Terms</p>
+            <span>|</span>
+            <p class="hover:text-white">Privacy</p>
+        </div>
+
+
+    </div>
+</footer>
+
+
+
+
+
+    
+
+</body>
+</html>

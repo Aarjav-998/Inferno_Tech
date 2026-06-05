@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-[#0a0a1f] via-[#141432] to-[#0a0a1f] flex flex-col overflow-x-hidden overflow-y-auto pb-24 font-[Montserrat]">
+
+
+
+<nav class="fixed w-full z-10 bg-[#0a0a1f]/80 backdrop-blur-sm flex justify-between items-center px-6 py-4">
+    <div class="text-white text-3xl font-bold tracking-tight" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <span class="bg-gradient-to-r from-[#c15e1d] to-[#fcd8ba] bg-clip-text text-transparent" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">INFERNO TECH</span>
+
+    </div>
+    <button class="navbar__toggle" id="menu-btn" aria-label="Open navigation">☰</button>
+    <ul class="navbar__menu hidden flex-col md:flex md:flex-row md:space-x-8 text-white" id="menu">
+        <li><a href="index.html" class="navbar__link">Home</a></li>
+        <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li><a href="w.html" class="navbar__link">Waitlist</a></li>
+        <li><a href="tech.html" class="navbar__link">Tech News</a></li>
+
+    </ul>
+</nav>
+
+
+
+
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+
+<br><br>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="title">Ready to Elevate Your Business?</h2>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Inventore at velit distinctio accusamus maiores libero optio ratione,<br> hic fugit praesentium minus saepe soluta expedita vero sequi asperiores in. <br>Exercitationem, debitis!</p>
+
+        <button onclick="toggleContact(hidden)" class="contact-btn">Get in Touch 📞</button>
+      <br><br>
+        <div id="contact-info" class=" hidden">
+            <p><strong>📧 Email:</strong> web.sidehustle2025@gmail.com</p>
+            <p><strong>📞 Phone:</strong> 📌91+8130197722</p>
+        </div>
+        <br>
+        <br>
+
+
+    </section>
+
+    <!-- Contact Form Section -->
+<section class="contact-form">
+    <div class="form-container">
+        <h2 class="form-title">📩 Get in Touch</h2>
+        <p class="form-desc">We'd love to hear from you! Fill out the form and let's build something amazing together.</p>
+
+        <form id="contact-form" action="https://formspree.io/f/mvgzebvo" method="POST">
+            <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
+            <input type="email" name="email" id="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
+            <textarea name="message" id="message" placeholder="Your Message" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+            <button type="submit" class="submit-btn">Send Message 🚀</button>
+        </form>
+
+        <p id="form-status"></p>
+    </div>
+</section>
+    <br><br><br>
+<!--  footer-->
+
+    <footer class="bg-[#0a0a1f] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Left Section - Logo & Description -->
+            <div>
+                <div class="text-white text-3xl font-bold tracking-tight mb-4" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                    <span class="bg-gradient-to-r from-[#c15e1d] to-[#fcd8ba] bg-clip-text text-transparent" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">INFERNO TECH</span>
+                </div>
+                <p class="text-gray-400 text-sm">
+                    At Inferno Tech, we craft AI-driven, high-performance websites that blend innovation,
+                    speed, and stunning design to help businesses grow and succeed online.
+                </p>
+            </div>
+
+            <!-- Middle Section - Our Services -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><p class="hover:text-white">AI-Powered Web Design</p></li>
+                    <li><p class="hover:text-white">Responsive UX/UI</p></li>
+                    <li><p class="hover:text-white">SEO & Performance Optimization</p></li>
+                    <li><p class="hover:text-white">Lightning-Fast Web Hosting</p></li>
+                </ul>
+            </div>
+
+            <!-- Right Section - Resources -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="https://web.dev/case-studies" target="_blank" class="hover:text-white">Case Studies</a></li>
+                    <li><a href="https://css-tricks.com/" target="_blank" class="hover:text-white">Web Development Tips</a></li>
+                    <li><a href="https://web.dev/performance" target="_blank" class="hover:text-white">Performance Insights</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us Section -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white">Twitter</a></li>
+                    <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                    <li><a href="https://github.com/Aarjav-998" class="hover:text-white">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="mt-10 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center px-4 max-w-7xl mx-auto">
+            <div class="flex space-x-4 text-gray-400 text-sm mb-4 md:mb-0">
+                <p class="hover:text-white">Terms</p>
+                <span>|</span>
+                <p class="hover:text-white">Privacy</p>
+            </div>
+
+
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
