@@ -36,12 +36,34 @@
 
 <br><br><br>
 
-    <main class="flex-1 p-8">
-        <h2 class="text-4xl text-white font-bold mb-6" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">Latest Tech Advancements</h2>
-        <div id="articles" class="space-y-4 ">
-            <!-- Articles will be injected here -->
-        </div>
-    </main>
+<main class="flex-1 p-8">
+    <h2 class="text-4xl text-white font-bold mb-6"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Latest Tech Advancements
+    </h2>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap gap-4 mb-6">
+        <select id="sort-filter"
+                class="bg-[#141432] text-white px-4 py-2 rounded-lg border border-gray-700">
+            <option value="date">Newest</option>
+            <option value="points">Most Popular</option>
+        </select>
+
+        <select id="time-filter"
+                class="bg-[#141432] text-white px-4 py-2 rounded-lg border border-gray-700">
+            <option value="all">All Time</option>
+            <option value="24h">Last 24 Hours</option>
+            <option value="7d">Last Week</option>
+            <option value="30d">Last Month</option>
+        </select>
+    </div>
+
+    <!-- Articles -->
+    <div id="articles" class="space-y-4">
+        <div class="text-gray-400">Loading articles...</div>
+    </div>
+</main>
 
 <!--   Footer  -->
 
