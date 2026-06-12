@@ -65,7 +65,7 @@
         <form id="contact-form" data-formspree-url="https://formspree.io/f/mvgzebvo">
             <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
             <input type="email" name="email" id="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
-            <input type="text" name="userId" id="userId" placeholder="User ID from the home page login (optional)" class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
+            <input type="text" name="userId" id="userId" placeholder="User ID from the home page login " class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" required style="font-family: Arial, Helvetica, sans-serif;">
             <textarea name="message" id="message" placeholder="Your Message" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
             <button type="submit" class="submit-btn">Send Message 🚀</button>
         </form>
@@ -91,7 +91,7 @@
                     <form id="message-read-form" class="message-tool__form">
                         <label for="read-user-id">User ID</label>
                         <div class="message-tool__row">
-                            <input type="text" id="read-user-id" placeholder="Example: 665f..." required>
+                            <input type="text" id="read-user-id" placeholder="Example: 665f..." required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
                             <button type="submit" class="secondary-btn">Load</button>
                         </div>
                     </form>
@@ -108,9 +108,9 @@
                     </div>
                     <form id="message-update-form" class="message-tool__form">
                         <label for="update-message-id">Message ID</label>
-                        <input type="text" id="update-message-id" placeholder="Message ID" required>
+                        <input type="text" id="update-message-id" placeholder="Message ID" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
                         <label for="update-message-text">Updated message</label>
-                        <textarea id="update-message-text" placeholder="Write the updated message..." required></textarea>
+                        <textarea id="update-message-text" placeholder="Write the updated message..." required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
                         <button type="submit" class="secondary-btn secondary-btn--full">Save Update</button>
                     </form>
                     <p id="update-status" class="message-status"></p>
