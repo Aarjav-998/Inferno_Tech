@@ -59,6 +59,7 @@ The API routes live in the `/api` folder, which Vercel runs as serverless functi
 
 ## API routes
 
+- `GET /api/debug/db` checks whether the deployed app can connect to MongoDB.
 - `POST /api/auth/register` creates a user account.
 - `POST /api/auth/login` logs in and returns a token.
 - `GET /api/auth/me` reads the logged-in user.
@@ -77,3 +78,4 @@ The API routes live in the `/api` folder, which Vercel runs as serverless functi
 - Do not commit `node_modules`.
 - Use MongoDB Atlas for Vercel deployments.
 - Keep your Formspree form IDs in `contact.html` and `waitlist.html`.
+- If login says there is a MongoDB problem, open `/api/debug/db` on your deployed Vercel URL.

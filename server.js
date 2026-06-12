@@ -4,6 +4,8 @@ const express = require("express");
 
 dotenv.config();
 
+process.env.MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/inferno_tech";
+
 const registerHandler = require("./api/auth/register");
 const loginHandler = require("./api/auth/login");
 const meHandler = require("./api/auth/me");
