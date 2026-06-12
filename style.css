@@ -140,14 +140,18 @@ body {
     justify-content: center;
  background-image: url(contact.jpg);
     padding: 3rem 1rem;
+    background-size: cover;
+    background-position: center;
 }
 
 .form-container {
-    background-color: #2D2D2D;
+    background: rgba(21, 23, 34, 0.94);
     padding: 2rem;
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
     width: 100%;
-    max-width: 400px;
+    max-width: 920px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
 }
 
 .form-title {
@@ -189,6 +193,196 @@ input, textarea {
 
 .submit-btn:hover {
     background-color: #1E4DB7;
+}
+
+.message-center {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+.message-center__header {
+    margin-bottom: 1.25rem;
+}
+
+.message-center__eyebrow {
+    color: #f3a261;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.message-center h3 {
+    color: white;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.message-center__header p,
+.message-tool__header p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0.35rem 0 0;
+}
+
+.message-tools {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.message-tool {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.message-tool__header {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.message-tool__icon {
+    align-items: center;
+    background: rgba(243, 162, 97, 0.14);
+    border: 1px solid rgba(243, 162, 97, 0.32);
+    border-radius: 8px;
+    display: inline-flex;
+    flex: 0 0 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+}
+
+.message-tool h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.message-tool__form label {
+    color: #e5e7eb;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.message-tool__row {
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.secondary-btn {
+    background: #f97316;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    min-height: 48px;
+    padding: 0 1.1rem;
+    transition: background-color 0.2s ease;
+}
+
+.secondary-btn:hover {
+    background: #ea580c;
+}
+
+.secondary-btn--full {
+    width: 100%;
+}
+
+.message-list {
+    margin-top: 1rem;
+    max-height: 340px;
+    overflow-y: auto;
+    padding-right: 0.2rem;
+}
+
+.message-card {
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.85rem;
+}
+
+.message-card__top {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+}
+
+.message-card strong,
+.message-card span,
+.message-card small {
+    display: block;
+}
+
+.message-card span,
+.message-card small {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+.message-card p {
+    color: #f8fafc;
+    line-height: 1.5;
+    margin: 0 0 0.8rem;
+}
+
+.message-id-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #fed7aa;
+    cursor: pointer;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    width: 100%;
+}
+
+.message-empty,
+.message-status {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+}
+
+.message-empty--error,
+.message-status--error {
+    color: #fecaca;
+}
+
+.message-status--success {
+    color: #bbf7d0;
+}
+
+@media (max-width: 820px) {
+    .message-tools {
+        grid-template-columns: 1fr;
+    }
+
+    .message-tool__row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Footer Styling */
@@ -294,4 +488,3 @@ input, textarea {
 .language-selector option {
     color: black;
 }
-

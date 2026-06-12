@@ -62,14 +62,61 @@
         <h2 class="form-title">📩 Get in Touch</h2>
         <p class="form-desc">We'd love to hear from you! Fill out the form and let's build something amazing together.</p>
 
-        <form id="contact-form" action="https://formspree.io/f/mvgzebvo" method="POST">
+        <form id="contact-form" data-formspree-url="https://formspree.io/f/mvgzebvo">
             <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
             <input type="email" name="email" id="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
+            <input type="text" name="userId" id="userId" placeholder="User ID from the home page login (optional)" class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;">
             <textarea name="message" id="message" placeholder="Your Message" required class="w-full px-4 py-3 rounded-lg bg-white text-black placeholder-gray-400 mb-4" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
             <button type="submit" class="submit-btn">Send Message 🚀</button>
         </form>
 
         <p id="form-status"></p>
+
+        <div class="message-center">
+            <div class="message-center__header">
+                <span class="message-center__eyebrow">Message Center</span>
+                <h3>Manage saved contact messages</h3>
+                <p>Use a user ID to review messages linked to an account, or use a message ID to update one saved message.</p>
+            </div>
+
+            <div class="message-tools">
+                <section class="message-tool">
+                    <div class="message-tool__header">
+                        <span class="message-tool__icon">🔎</span>
+                        <div>
+                            <h4>Find by User ID</h4>
+                            <p>Paste the user ID shown after account creation.</p>
+                        </div>
+                    </div>
+                    <form id="message-read-form" class="message-tool__form">
+                        <label for="read-user-id">User ID</label>
+                        <div class="message-tool__row">
+                            <input type="text" id="read-user-id" placeholder="Example: 665f..." required>
+                            <button type="submit" class="secondary-btn">Load</button>
+                        </div>
+                    </form>
+                    <div id="message-list" class="message-list" aria-live="polite"></div>
+                </section>
+
+                <section class="message-tool">
+                    <div class="message-tool__header">
+                        <span class="message-tool__icon">✏️</span>
+                        <div>
+                            <h4>Update a Message</h4>
+                            <p>Paste a message ID and write the replacement text.</p>
+                        </div>
+                    </div>
+                    <form id="message-update-form" class="message-tool__form">
+                        <label for="update-message-id">Message ID</label>
+                        <input type="text" id="update-message-id" placeholder="Message ID" required>
+                        <label for="update-message-text">Updated message</label>
+                        <textarea id="update-message-text" placeholder="Write the updated message..." required></textarea>
+                        <button type="submit" class="secondary-btn secondary-btn--full">Save Update</button>
+                    </form>
+                    <p id="update-status" class="message-status"></p>
+                </section>
+            </div>
+        </div>
     </div>
 </section>
     <br><br><br>

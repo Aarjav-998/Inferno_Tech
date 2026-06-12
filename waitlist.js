@@ -1,69 +1,112 @@
-// Waitlist JS
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("waitlist-form");
     const status = document.getElementById("form-message");
+    const accountMessage = document.getElementById("waitlist-account-message");
     const menuBtn = document.getElementById("menu-btn");
     const menu = document.getElementById("menu");
+    let currentUser = null;
 
-    // Mobile Menu Toggle
     if (menuBtn && menu) {
         menuBtn.addEventListener("click", () => {
             menu.classList.toggle("show");
         });
     }
 
-    // Form Submission
+    loadSavedSession();
+
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-
-        if (!name || !email) {
-            showStatus("⚠️ Please fill out all fields.", "error");
+        if (!currentUser) {
+            showStatus("Please log in from the home page before joining.", "error");
             return;
         }
 
-        if (!validateEmail(email)) {
-            showStatus("⚠️ Please enter a valid email address.", "error");
-            return;
-        }
-
-        showStatus("⏳ Joining waitlist...", "loading");
+        showStatus("Joining waitlist...", "loading");
 
         try {
-            const response = await fetch(form.action, {
+            const response = await fetch("/api/waitlist", {
                 method: "POST",
-                body: new FormData(form),
-                headers: {
-                    Accept: "application/json",
-                },
+                headers: authHeaders()
             });
+            const data = await response.json();
 
             if (response.ok) {
-                showStatus("✅ Successfully added to the waitlist!", "success");
-                form.reset();
+                saveSession(localStorage.getItem("infernoToken"), data.user);
+                submitWaitlistToFormspree(data.user);
+                showStatus("Successfully added to the waitlist and sent to Formspree!", "success");
             } else {
-                const data = await response.json();
-                showStatus(
-                    data.errors?.[0]?.message ||
-                    "❌ Something went wrong. Please try again.",
-                    "error"
-                );
+                showStatus(data.message || "Something went wrong. Please try again.", "error");
             }
         } catch (error) {
-            console.error(error);
-            showStatus("❌ Network error. Please try again.", "error");
+            showStatus("Network error. Please try again.", "error");
         }
     });
 
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    async function loadSavedSession() {
+        const token = localStorage.getItem("infernoToken");
+
+        if (!token) {
+            renderAccountMessage();
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/auth/me", {
+                headers: authHeaders()
+            });
+            const data = await response.json();
+
+            if (!response.ok) {
+                localStorage.removeItem("infernoToken");
+                currentUser = null;
+                renderAccountMessage();
+                return;
+            }
+
+            currentUser = data.user;
+            renderAccountMessage();
+        } catch (error) {
+            renderAccountMessage();
+        }
+    }
+
+    function saveSession(token, user) {
+        localStorage.setItem("infernoToken", token);
+        currentUser = user;
+        renderAccountMessage();
+    }
+
+    function authHeaders() {
+        return {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("infernoToken") || ""}`
+        };
+    }
+
+    function renderAccountMessage() {
+        if (!accountMessage) return;
+
+        if (!currentUser) {
+            accountMessage.textContent = "You are not logged in yet. Please log in on the home page first.";
+            return;
+        }
+
+        accountMessage.textContent = `Logged in as ${currentUser.name}. Your User ID is ${currentUser.id}.`;
+    }
+
+    function submitWaitlistToFormspree(user) {
+        document.getElementById("waitlist-formspree-name").value = user.name || "";
+        document.getElementById("waitlist-formspree-email").value = user.email || "";
+        document.getElementById("waitlist-formspree-user-id").value = user.id || "";
+        document.getElementById("waitlist-formspree-bio").value = user.bio || "";
+        document.getElementById("waitlist-formspree-gender").value = user.gender || "";
+        document.getElementById("waitlist-formspree-joined-at").value = user.waitlistJoinedAt || "";
+        form.submit();
     }
 
     function showStatus(text, type) {
         status.textContent = text;
-
         status.className = "mt-4 text-sm";
 
         switch (type) {

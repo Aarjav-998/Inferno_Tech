@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/message",
+      "destination": "/api/message"
+    },
+    {
+      "source": "/message/:id",
+      "destination": "/api/message/:id"
+    },
+    {
+      "source": "/notes/:id",
+      "destination": "/api/notes/:id"
+    },
+    {
+      "source": "/waitlist",
+      "destination": "/api/waitlist"
+    }
+  ]
+}
